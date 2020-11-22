@@ -1,6 +1,6 @@
 Ext.define('TutorialApp.view.users.registerUserController', {
-    extend: 'Ext.app.Controller',
-    alias: 'controller.register',
+    extend: 'Ext.app.ViewController',
+    alias: 'controller.registerController',
     config: {
         /*
             Uncomment to add references to view components
@@ -22,16 +22,29 @@ Ext.define('TutorialApp.view.users.registerUserController', {
      * Called when the view is created
      */
     init: function () {},
-    onLoginClick:function(){
-        // This would be the ideal location to verify the user's credentials via
+    saveData:function(){
 
-       // Set the localStorage value to true
-       localStorage.setItem("TutorialLoggedIn", true);
 
-       // Remove Login Window
-       this.getView().destroy();
+        Ext.Ajax.request({
+            url: 'https://jsonplaceholder.typicode.com/users',
+            method: 'POST',
+            success: function(response, opts) {
+                if (response.status == 200) {
+                    console.log('saved successfully ' + response.status);
+                } else {
+                    console.log('server-side failure with status code ' + response.status);
+                }
+                console.log(response.status);
 
-       // Add the main view to the viewport
-       Ext.widget('login');
+                var obj = Ext.decode(response.responseText);
+                console.dir(obj);
+                console.log(obj);
+            },
+
+            failure: function(response, opts) {
+                console.log('server-side failure with status code ' + response.status);
+            }
+        });
+
    },
 });

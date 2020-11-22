@@ -83,9 +83,9 @@ Ext.define('TutorialApp.view.users.UserGridController', {
 
 
     },
-    onFormFieldIllustrationButtonClick: function() {
+    addMemberClick: function() {
         Ext.create({
-            xtype: 'formfiledsillustration'
+            xtype: 'register'
         });
     }
 

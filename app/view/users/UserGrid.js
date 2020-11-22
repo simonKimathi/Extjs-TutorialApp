@@ -45,8 +45,8 @@ Ext.define('TutorialApp.view.users.UserGrid', {
     },
     {
         xtype: 'button',
-        text: 'Form Field Illustration',
-        handler: 'onFormFieldIllustrationButtonClick'
+        text: 'add member',
+        handler: 'addMemberClick'
     }
     ],
     columns: [
