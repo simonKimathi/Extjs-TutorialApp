@@ -15,20 +15,39 @@ Ext.define('TutorialApp.view.users.UserGrid', {
         type: 'checkboxmodel',
     },
     tbar: [{
-            xtype: 'button',
-            text: 'Add New User',
-            handler: 'onAddUserButtonClick'
-        },
-        {
-            xtype: 'button',
-            text: 'View Details',
-            handler: 'onViewUserDetailsButtonClick'
-        },
-        {
-            xtype: 'button',
-            text: 'form Details',
-            handler: 'onformDetailsButtonClick'
+        xtype: 'button',
+        text: 'Add New User',
+        handler: 'onAddUserButtonClick'
+    },
+    {
+        xtype: 'button',
+        text: 'View Details',
+        handler: 'onViewUserDetailsButtonClick'
+    },
+    {
+        xtype: 'button',
+        text: 'Remove',
+        handler: 'onRemoveButtonClick'
+    },
+    {
+        xtype: 'numberfield',
+        reference: 'searchId',
+        emptyText: 'Id to search',
+        width: 100,
+        listeners: {
+            specialkey: 'onIdSearchEnterKey'
         }
+    },
+    {
+        xtype: 'button',
+        text: 'Get Record',
+        handler: 'onGetButtonClick'
+    },
+    {
+        xtype: 'button',
+        text: 'Form Field Illustration',
+        handler: 'onFormFieldIllustrationButtonClick'
+    }
     ],
     columns: [
         { text: 'User ID', dataIndex: 'id' },

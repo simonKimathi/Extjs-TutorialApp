@@ -18,6 +18,7 @@ Ext.define('TutorialApp.view.users.UserForm', {
         reference:'form',
         jsonSubmit:true,
         scrollable:true,
+        jsonSubmit:true,
         defaults: {
             xtype: 'textfield',
             allowBlank: false
@@ -25,8 +26,8 @@ Ext.define('TutorialApp.view.users.UserForm', {
         items: [{
                 xtype: 'numberfield',
                 name:'id',
-                hidden:true,
-                allowBlank:true,
+                allowBlank: true,
+                disabled: true,
                 fieldLabel: 'User Id',
 
             },

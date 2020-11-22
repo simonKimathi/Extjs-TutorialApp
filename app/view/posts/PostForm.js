@@ -8,8 +8,12 @@ Ext.define('TutorialApp.view.posts.PostForm', {
     width: 600,
     items: [{
         xtype: 'form',
+        frame:true,
         layout: 'form',
-        reference:'pform',
+        reference:'form',
+        jsonSubmit:true,
+        scrollable:true,
+        jsonSubmit:true,
         defaults: {
             xtype: 'textfield',
             allowBlank: false

@@ -4,41 +4,41 @@ Ext.define('TutorialApp.view.users.UserFormController', {
  
     init: function() {},
     onUserFormSubmit:function(){
-        var me = this;
-        form = me.getView().lookupReference('form').getForm();
-        var id=form.findField('id').getValue();
-        var method='POST';
-        if(form.isValid()){
+        var me = this,
+            form = me.getView().lookupReference('form').getForm();
+        var id = form.findField('id').getValue();
+        console.log(id);
+        var method = 'POST';
+        var url = 'https://jsonplaceholder.typicode.com/users/';
+        if (id) {
+            method = 'PUT';
+            url = url + id
+        }
+        if (form.isValid()) {
             form.submit({
-                url:'https://jsonplaceholder.typicode.com/users',
+                url: url,
+                method: method,
 
-                //method:id===undefined? 'POST':"PUT",
-                if (id) {
-                    method='PUT';
+                success: function(form, action) {
+
+                    if (id) {
+                        //update
+                        console.log(action.result);
+                    } else {
+                        // creation process so we have to add this record to the store
+                        console.log(action.result);
+                        var store = Ext.ComponentQuery.query('usergrid')[0].getStore();
+                        store.loadRawData(action.result);
+                        console.log(store.getCount());
+                    }
                 },
-
-
-                success:function(form,action){
-                    if(id){
-                        console.log(action.result);
-                    }
-                    else{
-                        console.log(action.result);
-                        Ext.ComponentQuery.query('userform')[0].getStore().add(action.result);
-                    }
-                    console.log(action.result);
-                }
-                ,
-                failure:function(form,action){
+                failure: function(form, action) {
                     console.log(action.result);
                 }
             });
         }
-        console.log(form.getValues());
     },
-    submitForm:function(){
-        var me = this;
-        form = me.getView().lookupReference('form').getForm();
-        console.log(form.getValues());
+    onUserFormCancel: function() {
+        this.getView().close();
     }
 });

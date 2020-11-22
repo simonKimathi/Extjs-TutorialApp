@@ -2,5 +2,43 @@ Ext.define('TutorialApp.view.posts.PostFormController', {
     extend: 'Ext.app.ViewController',
     alias: 'controller.postformcontroller',
    
-    init: function() {}
+    init: function() {},
+    onPostFormSubmit:function(){
+        var me = this,
+            form = me.getView().lookupReference('form').getForm();
+        var id = form.findField('id').getValue();
+        console.log(id);
+        var method = 'POST';
+        var url = 'https://jsonplaceholder.typicode.com/posts/';
+        if (id) {
+            method = 'PUT';
+            url = url + id
+        }
+        if (form.isValid()) {
+            form.submit({
+                url: url,
+                method: method,
+
+                success: function(form, action) {
+
+                    if (id) {
+                        //update
+                        console.log(action.result);
+                    } else {
+                        // creation process so we have to add this record to the store
+                        console.log(action.result);
+                        var store = Ext.ComponentQuery.query('postgrid')[0].getStore();
+                        store.loadRawData(action.result);
+                        console.log(store.getCount());
+                    }
+                },
+                failure: function(form, action) {
+                    console.log(action.result);
+                }
+            });
+        }
+    },
+    onUserFormCancel: function() {
+        this.getView().close();
+    }
 });

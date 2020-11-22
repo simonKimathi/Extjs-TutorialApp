@@ -13,16 +13,48 @@ Ext.define('TutorialApp.view.posts.PostGrid', {
         type: 'checkboxmodel',
     },
     tbar: [{
-            xtype: 'button',
-            text: 'Add New Post',
-            handler: 'onAddPostButtonClick'
-        },
-        {
-            xtype: 'button',
-            text: 'View Details',
-            handler: 'onViewPostDetailsButtonClick'
+        xtype: 'button',
+        text: 'Add New post',
+        handler: 'onAddPostButtonClick'
+    },
+    {
+        xtype: 'button',
+        text: 'View Details',
+        handler: 'onViewPostDetailsButtonClick'
+    },
+    {
+        xtype: 'button',
+        text: 'Remove',
+        handler: 'onRemoveButtonClick'
+    },
+    {
+        xtype: 'numberfield',
+        reference: 'searchId',
+        emptyText: 'Id to search',
+        width: 100,
+        listeners: {
+            specialkey: 'onIdSearchEnterKey'
         }
-    ],
+    },
+    {
+        xtype: 'button',
+        text: 'Get Record',
+        handler: 'onGetButtonClick'
+    },
+    {
+        xtype: 'numberfield',
+        reference: 'searchIdComment',
+        emptyText: 'Id to search',
+        width: 100,
+        listeners: {
+            specialkey: 'onIdSearchEnterKey'
+        }
+    },
+    {
+        xtype: 'button',
+        text: 'Get Comment',
+        handler: 'onCommentGetButtonClick'
+    }],
     columns: [
         { text: 'Post ID', dataIndex: 'id', flex: 1 }, //1/8
         { text: 'User ID', dataIndex: 'userId', flex: 1 }, //1/8

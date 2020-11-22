@@ -17,6 +17,17 @@ Ext.define('TutorialApp.view.login.LoginController', {
 
         // Add the main view to the viewport
         Ext.widget('app-main');
-    }
+    },
+
+    onSignupClick:function(){
+
+        // Remove Login Window
+        this.getView().destroy();
+
+        // Add the main view to the viewport
+        Ext.create({
+            xtype:'register'
+    })
+}
 
 });

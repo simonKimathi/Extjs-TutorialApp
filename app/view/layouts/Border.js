@@ -28,9 +28,9 @@ Ext.define('TutorialApp.view.layouts.Border', {
         {
             title: 'Header',
             region: 'north',
-            height: 100,
-            minHeight: 75,
-            maxHeight: 150,
+            height: 400,
+            minHeight: 400,
+            maxHeight: 400,
             items: [{
                 xtype: 'vboxhboxcontainer'
             }]

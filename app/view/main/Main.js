@@ -84,14 +84,15 @@ Ext.define('TutorialApp.view.main.Main', {
 
     items: [       
         
+        // {
+        // title: 'Home',
+        // iconCls: 'fa-home',
+        // // The following grid shares a store with the classic version's grid as well!
+        // bind: {
+        //     html: '{loremIpsum}'
+        // }
+        // }, 
         {
-        title: 'Home',
-        iconCls: 'fa-home',
-        // The following grid shares a store with the classic version's grid as well!
-        bind: {
-            html: '{loremIpsum}'
-        }
-        }, {
             title: 'Users',
             iconCls: 'fa-user',
             items: [{
