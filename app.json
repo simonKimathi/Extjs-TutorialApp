@@ -209,6 +209,10 @@
         {
             "path": "app.js",
             "bundle": true
+        },
+        {
+            "path": "app/customVtypes.js",
+            "includeInBundle": true
         }
     ],
 
