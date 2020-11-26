@@ -1,0 +1,23 @@
+Ext.define('TutorialApp.view.posts.PostCommentsWindow',{
+    extend:'Ext.window.Window',
+    xtype:'postcommentswindow',
+    controller:'postcommentswindowcontroller',
+    modal:true,
+    shadow:true,
+    autoShow:true,
+    layout:'fit',
+    closeable:true,
+    width:900,
+    viewModel:{
+        data:{
+            postId:null
+        }
+    },
+    items:[
+        {
+            xtype:'commentsgrid',
+            reference:'commentsgrid'
+        }
+    ],
+
+})

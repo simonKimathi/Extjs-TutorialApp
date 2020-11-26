@@ -1,0 +1,23 @@
+Ext.define('TutorialApp.view.users.UserPostWindow',{
+    extend:'Ext.window.Window',
+    xtype:'userpostswindow',
+    controller:'userpostwindowcontroller',
+    modal:true,
+    shadow:true,
+    autoShow:true,
+    layout:'fit',
+    closeable:true,
+    width:900,
+    viewModel:{
+        data:{
+            postId:null
+        }
+    },
+    items:[
+        {
+            xtype:'postgrid',
+            reference:'postgrid'
+        }
+    ],
+
+})
