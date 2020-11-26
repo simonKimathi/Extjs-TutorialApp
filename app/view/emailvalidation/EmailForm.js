@@ -31,7 +31,7 @@ Ext.define('TutorialApp.view.emailvalidation.EmailForm', {
             inputType:'email',
             itemId: 'email',
             allowBlank: false,
-            vtype:'email'
+            vtype:'emailValidator'
         }]
         },
 

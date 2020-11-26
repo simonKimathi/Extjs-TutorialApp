@@ -36,12 +36,14 @@ Ext.define('TutorialApp.view.passwordvalidation.PasswordForm', {
             listeners: {
                 validitychange: 'validateField',
                 blur: 'validateField'
-            }
+            }, 
+            vtype: 'passwordCheck'
+
         }, {
             fieldLabel: 'Confirm Password',
             name: 'passwordConfirm',
             inputType:'password',
-            vtype: 'password',
+            vtype: 'passwordMatch',
             initialPassField: 'password'
         }]
         },

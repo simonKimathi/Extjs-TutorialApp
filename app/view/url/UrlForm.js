@@ -30,7 +30,7 @@ Ext.define('TutorialApp.view.url.UrlForm', {
             name: 'url',
             itemId: 'email',
             allowBlank: false,
-            vtype:'url'
+            vtype:'urlValidator'
         }]
         },
 

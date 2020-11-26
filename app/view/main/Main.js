@@ -95,10 +95,34 @@ Ext.define('TutorialApp.view.main.Main', {
             xtype: 'postgrid'
         }]
     },  {
-        title: 'Tab Panels',
+        title: 'Tab Panel Example',
         iconCls: 'fa-cog',
         items: [{
             xtype: 'masterdetaillayout'
+        }]
+    },  {
+        title: 'Date RangeExample',
+        iconCls: 'fa-cog',
+        items: [{
+            xtype: 'daterangeform'
+        }]
+    }, {
+        title: 'Password Validation',
+        iconCls: 'fa-cog',
+        items: [{
+            xtype: 'passwordform'
+        }]
+    },{
+        title: 'Email Validation',
+        iconCls: 'fa-cog',
+        items: [{
+            xtype: 'emailform'
+        }]
+    },{
+        title: 'Url Validation',
+        iconCls: 'fa-cog',
+        items: [{
+            xtype: 'urlform'
         }]
     },{
         title: 'Settings',
