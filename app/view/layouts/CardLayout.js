@@ -38,13 +38,13 @@ Ext.define('TutorialApp.view.layouts.CardLayout', {
     ],
 
     items: [{
-        id: 'card-0',
+        itemId: 'card-0',
         html: '<h1>Check this Card out!</h1><p>Step 1 of 3</p>'
     },{
-        id: 'card-1',
+        itemId: 'card-1',
         html: '<p>Step 2 of 3</p>'
     },{
-        id: 'card-2',
+        itemId: 'card-2',
         html: '<h1>Congratulations. End!</h1><p>Step 3 of 3 - Complete</p>'
     }],
 });

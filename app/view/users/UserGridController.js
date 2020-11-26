@@ -1,12 +1,13 @@
 Ext.define('TutorialApp.view.users.UserGridController', {
     extend: 'Ext.app.ViewController',
     alias: 'controller.usergridcontroller',
-    mixins: [
+    mixins:[
         'TutorialApp.view.mixins.GridMixin'
-    ],
+    ],  
     init: function() {
 
     },
+    
     onAddUserButtonClick: function() {
         Ext.create({
             xtype: 'userform'
@@ -14,14 +15,39 @@ Ext.define('TutorialApp.view.users.UserGridController', {
     },
     onViewUserDetailsButtonClick: function() {
         var me = this;
+
         var record = me.getSelectedRecord();
-        if (record) {
-            console.log(record);
+        if(record){
             var windowContainer = Ext.create({
-                xtype: 'userform'
+                xtype:'userform'
             });
             windowContainer.lookupReference('form').getForm().loadRecord(record);
         }
+    },
+    onRowClick:function( grid, record, element, rowIndex, e, eOpts ) {
+       
+        var bioDataForm= Ext.ComponentQuery.query('tabpanelcustom #userdetailform')[0].getForm();
+        
+        var addressdetailform=Ext.ComponentQuery.query('tabpanelcustom #addressdetailform')[0].getForm();
+       
+        var contactdetailform=Ext.ComponentQuery.query('tabpanelcustom #contactdetailform')[0].getForm();
+        
+        var companydetailform=Ext.ComponentQuery.query('tabpanelcustom #companydetailform')[0].getForm();
+        
+        bioDataForm.loadRecord(record);
+        
+        addressdetailform.loadRecord(record);
+        
+        contactdetailform.loadRecord(record);
+        
+        companydetailform.loadRecord(record);
+        
+
+    },
+    onFormFieldIllustrationButtonClick:function(){
+        Ext.create({
+            xtype:'formfieldillustration'
+        })
     },
     onRemoveButtonClick: function() {
         var me = this;
@@ -83,10 +109,25 @@ Ext.define('TutorialApp.view.users.UserGridController', {
 
 
     },
-    addMemberClick: function() {
+    onAddUserFieldSetButtonClick: function() {
         Ext.create({
-            xtype: 'register'
+            xtype: 'registeruser'
         });
-    }
+    },
+    onViewUserPostsButtonClick: function () {
+        var me = this;
+        var record = me.getSelectedRecord();
+        if (record) {
+           Ext.create({
+                xtype: 'userpostswindow',
+                viewModel: {
+                    data: {
+                        userId: record.get('userId'),
 
+                    }
+                }
+            });
+
+        }
+    }
 })

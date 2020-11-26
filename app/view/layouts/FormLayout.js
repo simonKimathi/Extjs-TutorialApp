@@ -10,30 +10,13 @@ Ext.define('TutorialApp.view.layouts.FormLayout', {
     bodyPadding: 5,
     defaultType: 'textfield',
     items: [{
-        xtype:'container',
-        layout: { type: 'hbox' },
-        border:true,
-        items:[
-            {
-                xtype: 'textfield',
-                name:'firstName',
-                fieldLabel: 'First Name',
-                //padding:'5 5 5 5'
-            },
-            {
-                xtype: 'textfield',
-                name:'lastName',
-                fieldLabel: 'Last Name',
-                //padding:'5 5 5 5'
-            },
-            {
-                xtype: 'textfield',
-                name:'surName',
-                fieldLabel: 'Sur Name',
-                //padding:'5 5 5 5'
-            }
-        ]
-    },{
+        fieldLabel: 'First Name',
+         name: 'first',
+         allowBlank:false
+     },{
+         fieldLabel: 'Last Name',
+         name: 'last'
+     },{
          fieldLabel: 'Company',
          name: 'company'
      }, {

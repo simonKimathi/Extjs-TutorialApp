@@ -15,39 +15,47 @@ Ext.define('TutorialApp.view.users.UserGrid', {
         type: 'checkboxmodel',
     },
     tbar: [{
-        xtype: 'button',
-        text: 'Add New User',
-        handler: 'onAddUserButtonClick'
-    },
-    {
-        xtype: 'button',
-        text: 'View Details',
-        handler: 'onViewUserDetailsButtonClick'
-    },
-    {
-        xtype: 'button',
-        text: 'Remove',
-        handler: 'onRemoveButtonClick'
-    },
-    {
-        xtype: 'numberfield',
-        reference: 'searchId',
-        emptyText: 'Id to search',
-        width: 100,
-        listeners: {
-            specialkey: 'onIdSearchEnterKey'
+            xtype: 'button',
+            text: 'Add New User',
+            handler: 'onAddUserButtonClick'
+        },
+        {
+            xtype: 'button',
+            text: 'View User Posts',
+            handler: 'onViewUserPostsButtonClick'
+        },
+        {
+            xtype: 'button',
+            text: 'New User Fieldset',
+            handler: 'onAddUserFieldSetButtonClick'
+        },
+        {
+            xtype: 'button',
+            text: 'View Details',
+            handler: 'onViewUserDetailsButtonClick'
+        },
+        {
+            xtype: 'button',
+            text: 'Form field Illustration',
+            handler: 'onFormFieldIllustrationButtonClick'
+        },{
+            xtype: 'numberfield',
+            reference: 'searchId',
+            emptyText: 'Id to search',
+            width: 200,
+            listeners: {
+                specialkey: 'onIdSearchEnterKey'
+            }
+        },
+        {
+            xtype: 'button',
+            text: 'Get Record',
+            handler: 'onGetButtonClick'
+        }, {
+            xtype: 'button',
+            text: 'Remove',
+            handler: 'onRemoveButtonClick'
         }
-    },
-    {
-        xtype: 'button',
-        text: 'Get Record',
-        handler: 'onGetButtonClick'
-    },
-    {
-        xtype: 'button',
-        text: 'add member',
-        handler: 'addMemberClick'
-    }
     ],
     columns: [
         { text: 'User ID', dataIndex: 'id' },
@@ -73,4 +81,7 @@ Ext.define('TutorialApp.view.users.UserGrid', {
         displayMsg: 'Display records {0} - {1} of {2}',
         emptyMsg: 'No Record to display'
     },
+    listeners:{
+        rowclick:'onRowClick'
+    }
 });

@@ -4,8 +4,9 @@ Ext.define('TutorialApp.view.users.UserFormController', {
  
     init: function() {},
     onUserFormSubmit:function(){
-        var me = this,
-            form = me.getView().lookupReference('form').getForm();
+        var me = this;
+        form = me.getView().lookupReference('form').getForm();
+        console.log(form.getValues());
         var id = form.findField('id').getValue();
         console.log(id);
         var method = 'POST';
@@ -38,7 +39,7 @@ Ext.define('TutorialApp.view.users.UserFormController', {
             });
         }
     },
-    onUserFormCancel: function() {
-        this.getView().close();
+    onUserFormCancel:function(){
+        this.getView.close();
     }
 });

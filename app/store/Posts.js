@@ -1,6 +1,13 @@
 Ext.define('TutorialApp.store.Posts', {
     extend: 'Ext.data.Store',
     alias: 'store.posts',
+    fields:[
+        {name:'id', type:'integer'},
+        {name:'userId', type:'integer'},
+        {name:'title'},
+        {name:'body'},
+
+    ],
     model: 'TutorialApp.model.Post',
     proxy: {
         type: 'ajax',

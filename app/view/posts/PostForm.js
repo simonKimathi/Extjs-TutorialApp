@@ -4,16 +4,17 @@ Ext.define('TutorialApp.view.posts.PostForm', {
     controller: 'postformcontroller',
     autoShow: true,
     modal: true,
+    title:'Post Form',
     shadow: true,
     width: 600,
+    viewModel:{
+        type:'postformviewmodel'
+    },
+
     items: [{
         xtype: 'form',
-        frame:true,
         layout: 'form',
-        reference:'form',
-        jsonSubmit:true,
-        scrollable:true,
-        jsonSubmit:true,
+        reference:'pform',
         defaults: {
             xtype: 'textfield',
             allowBlank: false

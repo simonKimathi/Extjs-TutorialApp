@@ -11,20 +11,20 @@ Ext.define('TutorialApp.view.layouts.Accordion', {
     },
     
     items: [{
-        title: 'User Register',
-        html: 'User Register Success'
+        title: 'User ',
+        html: 'User Page Start'
     },
     , {
         title: 'Login',
-        html: 'Login Here'
+        html: 'Login Details'
     }, {
         title: 'SignUp',
-        html: 'Signup here'
+        html: 'Signup Details'
     }, {
-        title: 'Home Page',
-        html: 'Home Page content'
+        title: 'Website Page',
+        html: 'Page content'
     }, {
-        title: 'Users',
+        title: 'Users Available',
         html: 'User Details Content'
     }]
 });
