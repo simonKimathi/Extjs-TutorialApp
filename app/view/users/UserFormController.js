@@ -12,7 +12,7 @@ Ext.define('TutorialApp.view.users.UserFormController', {
         var method = 'POST';
         var url = 'http://localhost:8080/TrainingApp/api/users/editUser';
         if (id) {
-            method = 'POST';
+            method = 'PUT';
             url = url
         }
         if (form.isValid()) {
