@@ -19,7 +19,7 @@ Ext.define('TutorialApp.view.daterangevalidation.DateRangeForm', {
         },
         
         fieldDefaults: {
-            msgTarget: 'side',
+            msgTarget: 'under',
             autoFitErrors: false
         },
 

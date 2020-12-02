@@ -14,7 +14,7 @@ Ext.define('TutorialApp.model.User',{
         {name:'addressGeoLng', type:'float', mapping:'address.geo.lng'},
         {name:'phone', type:'string'},
         {name:'website', type:'string'},
-        {name:'companyName', type:'string',mapping:'company.name'},
+        {name:'companyName', type:'string',mapping:'company.companyName'},
         {name:'companyCatchPhrase', type:'string',mapping:'company.catchPhrase'},
         {name:'companyBs', type:'string',mapping:'company.bs'},
     ]

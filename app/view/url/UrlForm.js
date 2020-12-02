@@ -19,7 +19,7 @@ Ext.define('TutorialApp.view.url.UrlForm', {
         },
         
         fieldDefaults: {
-            msgTarget: 'side',
+            msgTarget: 'under',
             autoFitErrors: false
         },
 

@@ -54,7 +54,7 @@ Ext.define('TutorialApp.view.users.UserGridController', {
         var record = me.getSelectedRecord();
         if (record) {
             Ext.Ajax.request({
-                url: 'https://jsonplaceholder.typicode.com/users/' + record.get('id'),
+                url: 'http://localhost:8080/TrainingApp/api/users/deleteUserById/' + record.get('id'),
                 method: 'DELETE',
                 success: function(response, opts) {
                     var obj = Ext.decode(response.responseText);
@@ -79,7 +79,7 @@ Ext.define('TutorialApp.view.users.UserGridController', {
     getRecordFromServer: function(searchId) {
         if (searchId) {
             Ext.Ajax.request({
-                url: 'https://jsonplaceholder.typicode.com/users/' + searchId,
+                url: 'http://localhost:8080/TrainingApp/api/users/getUserById/' + searchId,
                 method: 'GET',
                 success: function(response, opts) {
                     if (response.status == 200) {

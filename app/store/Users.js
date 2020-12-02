@@ -4,7 +4,7 @@ Ext.define('TutorialApp.store.Users', {
     model:'TutorialApp.model.User',
     proxy:{
         type:'ajax',
-        url:'https://jsonplaceholder.typicode.com/users',
+        url:'http://localhost:8080/TrainingApp/api/users/getAllUsers/',
         reader:{
             type:'json',
             rootProperty:'users',

@@ -19,6 +19,7 @@ Ext.define('TutorialApp.view.users.UserForm', {
         items: [{
                 xtype: 'numberfield',
                 name:'id',
+                hidden:true,
                 fieldLabel: 'User Id',
 
             },
@@ -78,7 +79,6 @@ Ext.define('TutorialApp.view.users.UserForm', {
         ],
         buttons: [{
                 text: 'Save',
-                formBind: true,
                 handler: 'onUserFormSubmit'
             },
             {

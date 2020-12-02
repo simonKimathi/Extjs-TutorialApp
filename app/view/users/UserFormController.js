@@ -10,14 +10,14 @@ Ext.define('TutorialApp.view.users.UserFormController', {
         var id = form.findField('id').getValue();
         console.log(id);
         var method = 'POST';
-        var url = 'https://jsonplaceholder.typicode.com/users/';
+        var url = 'http://localhost:8080/TrainingApp/api/users/editUser';
         if (id) {
-            method = 'PUT';
-            url = url + id
+            method = 'POST';
+            url = url
         }
         if (form.isValid()) {
             form.submit({
-                url: url,
+                url: 'http://localhost:8080/TrainingApp/api/users',
                 method: method,
 
                 success: function(form, action) {

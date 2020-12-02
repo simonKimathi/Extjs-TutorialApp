@@ -19,7 +19,7 @@ Ext.define('TutorialApp.view.emailvalidation.EmailForm', {
         },
         
         fieldDefaults: {
-            msgTarget: 'side',
+            msgTarget: 'under',
             autoFitErrors: false
         },
 

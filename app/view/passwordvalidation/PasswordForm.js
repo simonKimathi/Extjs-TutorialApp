@@ -21,7 +21,7 @@ Ext.define('TutorialApp.view.passwordvalidation.PasswordForm', {
         },
         
         fieldDefaults: {
-            msgTarget: 'side',
+            msgTarget: 'under',
             autoFitErrors: false
         },
 
